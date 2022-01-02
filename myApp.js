@@ -6,11 +6,11 @@ var app = express();
 app.get("/",(req,res)=> {
     //res.send("Hello Express");
 
-    res.sendFile(__dirname + "/views/index.html");
+    //res.sendFile(__dirname + "/views/index.html");
 
-    app.use("/public",express.static(__dirname + "/public"));
+    //app.use("/public",express.static(__dirname + "/public"));
 
-    res.json({"message":"Hello json"});
+    res.json({"message": "Hello json"});
 })
 
 
