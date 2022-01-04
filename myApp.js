@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 var express = require('express');
+const res = require('express/lib/response');
 var app = express();
 
 //console.log("Hello World");
@@ -18,12 +19,16 @@ app.get("/",(req,res)=> {
 
 });
 
+app.get("/:word/echo",(req,res)=> {
+    var word = req.params.word;
+    res.json(word);
+});
+
 app.get('/now',(req,res,next)=> {
         req.time = new Date().toString();
         next();
     },(req,res) => {
         res.send({time : req.time});
-        console.log(req.time);
     });
 
 app.use(express.static(__dirname + "/public"));
