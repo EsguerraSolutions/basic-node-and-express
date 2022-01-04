@@ -21,7 +21,7 @@ app.get("/",(req,res)=> {
 
 app.get("/:word/echo",(req,res)=> {
     var word = req.params.word;
-    res.json(word);
+    res.json({"echo":word});
 });
 
 app.get('/now',(req,res,next)=> {
