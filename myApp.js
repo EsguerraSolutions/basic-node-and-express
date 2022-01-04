@@ -53,7 +53,12 @@ app.get("/json",(req,res)=> {
         res.json({"message": "Hello json"});
     }
 
-})
+});
+
+app.post("/name",(req,res)=> {
+    const {first,last} = req.body;
+    res.json({"name": first + " " + last});
+});
 
 
 
